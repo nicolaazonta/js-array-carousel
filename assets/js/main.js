@@ -18,13 +18,16 @@ const album = [
     './assets/img/05.webp'
 ]
 
+
 let imagesEl = document.getElementById('contenitore');
 
+console.log();
 
-for(let i=0 ; i<album.lenght ; i++){
+for (let i = 0 ; i < album.length ; i++){
     const imgCurrent = album[i];
-    const singleImgElement =`
-    <img  class="img-fluid " src="${imgCurrent}" alt="">
-    `;
+    console.log(album[i]);
+
+    const singleImgElement = `<img  class="img-fluid " src="${imgCurrent}" alt="">`;
+
     imagesEl.insertAdjacentElement('afterbegin' , singleImgElement);
 }
