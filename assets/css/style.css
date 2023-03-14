@@ -11,3 +11,11 @@
     transform: translate(-50%);
     bottom: 0;
 } 
+
+
+.contenitore img:not(.active) {
+    display: none;
+}
+.active{
+    display: block;
+}

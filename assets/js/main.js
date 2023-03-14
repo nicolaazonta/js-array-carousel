@@ -21,13 +21,25 @@ const album = [
 
 let imagesEl = document.getElementById('contenitore');
 
-console.log();
+
 
 for (let i = 0 ; i < album.length ; i++){
     const imgCurrent = album[i];
     console.log(album[i]);
 
+
     const singleImgElement = `<img  class="img-fluid " src="${imgCurrent}" alt="">`;
 
-    imagesEl.insertAdjacentElement('afterbegin' , singleImgElement);
+
+    
+    imagesEl.insertAdjacentHTML('afterbegin' , singleImgElement);
 }
+
+
+const previousButton = document.getElementById('button_up');
+previousButton.addEventListener('click' , function() {
+    console.log('precedente');
+})
+
+
+
