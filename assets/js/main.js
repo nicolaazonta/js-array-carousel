@@ -20,25 +20,50 @@ const album = [
 
 
 let imagesEl = document.getElementById('contenitore');
-
+let marker = 4;
 
 
 for (let i = 0 ; i < album.length ; i++){
     const imgCurrent = album[i];
-    console.log(album[i]);
 
-
-    const singleImgElement = `<img  class="img-fluid ${i === activeImage ? 'active' : ''} " src="${imgCurrent}" alt="">`;
-
-
+    const singleImgElement = `<img  class="img-fluid ${i === marker ? 'active' : ''} " src="${imgCurrent}" alt="">`;
     
     imagesEl.insertAdjacentHTML('afterbegin' , singleImgElement);
 }
 
 
+const allImages = document.querySelectorAll('#contenitore > img')  
+
+
 const previousButton = document.getElementById('button_up');
 previousButton.addEventListener('click' , function() {
     console.log('precedente');
+
+    const currentSlide = allImages[marker];
+
+    currentSlide.classList.remove('active');
+
+    marker --;
+
+    const prevImage = allImages[marker];
+
+    prevImage.classList.add('active');
+})
+
+const nextButton = document.getElementById('button_down');
+nextButton.addEventListener('click' , function() {
+    console.log('seguente');
+    
+    const currentSlide = allImages[marker];
+
+    currentSlide.classList.remove('active');
+
+    marker ++;
+
+    const nextImage = allImages[marker];
+
+    nextImage.classList.add('active');
+    
 })
 
 

@@ -13,9 +13,9 @@
 } 
 
 
-.contenitore img:not(.active) {
-    display: none;
-}
-.active{
+/* .active{
     display: block;
+} */
+#contenitore > img:not(.active) {
+    display: none;
 }
