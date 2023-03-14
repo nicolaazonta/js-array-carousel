@@ -20,7 +20,7 @@ const album = [
 
 
 let imagesEl = document.getElementById('contenitore');
-let marker = 4;
+let marker = 2;
 
 
 for (let i = 0 ; i < album.length ; i++){
@@ -45,6 +45,10 @@ previousButton.addEventListener('click' , function() {
 
     marker --;
 
+    if (marker < 0){
+        marker = album.length - 1;
+    }
+
     const prevImage = allImages[marker];
 
     prevImage.classList.add('active');
@@ -60,11 +64,19 @@ nextButton.addEventListener('click' , function() {
 
     marker ++;
 
+    if(marker > album.length - 1){
+        marker = 0;
+    }
+
     const nextImage = allImages[marker];
 
     nextImage.classList.add('active');
     
 })
 
-
+/* if(marker > album.length){
+    marker = 0;
+} else if (marker < 0){
+    marker = album.length - 1;
+} */
 
