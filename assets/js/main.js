@@ -10,4 +10,21 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
 
 MILESTONE 3
 Al click dell'utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente. */
+const album = [
+    './assets/img/01.webp',
+    './assets/img/02.webp',
+    './assets/img/03.webp',
+    './assets/img/04.webp',
+    './assets/img/05.webp'
+]
 
+let imagesEl = document.getElementById('contenitore').innerHTML;
+
+
+for(let i=0 ; i<album.lenght ; i++){
+    const imgCurrent = album [i];
+    const singleImgElement =`
+    <img  class="img-fluid " src="${imgCurrent}" alt="">
+    `
+    imagesEl.insertAdjacentElement('afterstart' , singleImgElement)
+}
