@@ -28,7 +28,7 @@ for (let i = 0 ; i < album.length ; i++){
     console.log(album[i]);
 
 
-    const singleImgElement = `<img  class="img-fluid " src="${imgCurrent}" alt="">`;
+    const singleImgElement = `<img  class="img-fluid ${i === activeImage ? 'active' : ''} " src="${imgCurrent}" alt="">`;
 
 
     
